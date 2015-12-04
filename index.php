@@ -1,6 +1,6 @@
 <?php
 $start = microtime(true);
-$theme = (date("H") < 6 || date("H") > 21) ? "darkly":"flatly";
+$theme = (date("H") < 6 || date("H") >= 21) ? "darkly":"flatly";
 $iconColor = ($theme == "darkly") ? "#ffffff":"#2c3e50";
 ?>
 <!doctype html>
@@ -22,7 +22,7 @@ $iconColor = ($theme == "darkly") ? "#ffffff":"#2c3e50";
     <div class="col-md-12" style="text-align:center"><h1>Pieter De Clercq</h1></div>
   </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">Languages</h3>
@@ -54,7 +54,22 @@ $iconColor = ($theme == "darkly") ? "#ffffff":"#2c3e50";
               <tr>
                 <th>Tools</th>
                 <td>
-                  <div class="col-md-3"><h2 class="devicon-css3-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-apache-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-atom-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-bitbucket-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-bower-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-chrome-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-gimp-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-git-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-github-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-inkscape-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-jetbrains-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-linux-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-nginx-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-nodewebkit-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-phpstorm-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-ssh-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-ubuntu-plain iconColor"></h2></div>
                 </td>
               </tr>
               <tr>
@@ -66,17 +81,7 @@ $iconColor = ($theme == "darkly") ? "#ffffff":"#2c3e50";
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Photostream</h3>
-        </div>
-        <div class="panel-body">
-          TODO
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">Contact information</h3>
