@@ -1,6 +1,7 @@
 <?php
 $start = microtime(true);
 $theme = (date("H") < 6 || date("H") > 21) ? "darkly":"flatly";
+$iconColor = ($theme == "darkly") ? "#ffffff":"#2c3e50";
 ?>
 <!doctype html>
 <head>
@@ -8,6 +9,12 @@ $theme = (date("H") < 6 || date("H") > 21) ? "darkly":"flatly";
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="assets/css/bootstrap.<?=$theme?>.min.css"/>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css"/>
+  <style type="text/css">
+  .zeropadding{padding:0}
+  .zeromargin{margin:0}
+  .iconColor{color:<?=$iconColor?>}
+  </style>
 </head>
 <body>
 <div class="container">
@@ -20,8 +27,42 @@ $theme = (date("H") < 6 || date("H") > 21) ? "darkly":"flatly";
         <div class="panel-heading">
           <h3 class="panel-title">Languages</h3>
         </div>
-        <div class="panel-body">
-          TODO
+        <div class="panel-body zeropadding">
+          <table class="table table-bordered table-responsive zeromargin">
+            <tbody>
+              <tr>
+                <th>Web</th>
+                <td>
+                  <div class="col-md-3"><h2 class="devicon-bootstrap-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-css3-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-html5-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-javascript-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-jquery-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-mysql-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-nodejs-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-php-plain iconColor"></h2></div>
+                </td>
+              </tr>
+              <tr>
+                <th>Prg</th>
+                <td>
+                  <div class="col-md-3"><h2 class="devicon-android-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-c-plain iconColor"></h2></div>
+                  <div class="col-md-3"><h2 class="devicon-java-plain iconColor"></h2></div>
+                </td>
+              </tr>
+              <tr>
+                <th>Tools</th>
+                <td>
+                  <div class="col-md-3"><h2 class="devicon-css3-plain iconColor"></h2></div>
+                </td>
+              </tr>
+              <tr>
+                <th>Spoken</th>
+                <td>//</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
