@@ -11,11 +11,11 @@ $iconColor = ($theme == "darkly") ? "#ffffff":"#2c3e50";
 	<link rel="stylesheet" href="assets/css/bootstrap.<?=$theme?>.min.css"/>
   <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css"/>
   <link rel="stylesheet" href="assets/css/famfamfam.flags.min.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
   <style type="text/css">
   .zeropadding{padding:0}
   .zeromargin{margin:0}
   .iconColor{color:<?=$iconColor?>}
-  .countryFlag{}
   </style>
 </head>
 <body>
@@ -77,10 +77,10 @@ $iconColor = ($theme == "darkly") ? "#ffffff":"#2c3e50";
               <tr>
                 <th>Spoken</th>
                 <td>
-                  <div class="col-md-3" style="text-align:center"><img class="countryFlag" src="assets/img/flags/nl.png" /></div>
-                  <div class="col-md-3" style="text-align:center"><img class="countryFlag" src="assets/img/flags/uk.png" /></div>
-                  <div class="col-md-3" style="text-align:center"><img class="countryFlag" src="assets/img/flags/fr.png" /></div>
-                  <div class="col-md-3" style="text-align:center"><img class="countryFlag" src="assets/img/flags/de.png" /></div>
+                  <div class="col-md-3" style="text-align:center"><img src="assets/img/flags/nl.png" /></div>
+                  <div class="col-md-3" style="text-align:center"><img src="assets/img/flags/uk.png" /></div>
+                  <div class="col-md-3" style="text-align:center"><img src="assets/img/flags/fr.png" /></div>
+                  <div class="col-md-3" style="text-align:center"><img src="assets/img/flags/de.png" /></div>
                 </td>
               </tr>
             </tbody>
