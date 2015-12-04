@@ -1,7 +1,21 @@
 <?php
 $start = microtime(true);
-$theme = (date("H") < 6 || date("H") >= 21) ? "darkly":"flatly";
+$theme = (date("H") < 6 || date("H") >= 23) ? "darkly":"flatly";
 $iconColor = ($theme == "darkly") ? "#ffffff":"#2c3e50";
+
+function days_till_birthday() {
+  $birthdayThisYear = new DateTime(date('Y') . '-' . '08-21' .' 00:00:00');
+  $today = new DateTime('midnight today');
+
+  if ($birthdayThisYear < $today) {
+      $birthdayThisYear->modify("+1 Year");
+  }
+
+  $diff = $birthdayThisYear->diff($today);
+
+  return $diff->days;
+}
+
 ?>
 <!doctype html>
 <head>
@@ -24,7 +38,7 @@ $iconColor = ($theme == "darkly") ? "#ffffff":"#2c3e50";
     <div class="col-md-12" style="text-align:center"><h1>Pieter De Clercq</h1></div>
   </div>
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-7">
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">Languages</h3>
@@ -88,13 +102,41 @@ $iconColor = ($theme == "darkly") ? "#ffffff":"#2c3e50";
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-5">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title">Contact information</h3>
+          <h3 class="panel-title">Information</h3>
         </div>
-        <div class="panel-body">
-          TODO
+        <div class="panel-body zeropadding">
+          <table class="table table-bordered table-responsive zeromargin">
+            <tbody>
+              <tr>
+                <th style="text-align:center"><i class="fa fa-2x fa-birthday-cake"></i></th>
+                <td><h4>August 21, 1997 &mdash;	 that's another <?=days_till_birthday()?> days :(</h4></a></td>
+              </tr>
+              <tr>
+                <th style="text-align:center"><i class="fa fa-2x fa-envelope"></i></th>
+                <td><h4><a href="mailto:pieterdeclercq@outlook.com">pieterdeclercq@outlook.com</a></h4></td>
+              </tr>
+              <tr>
+                <th style="text-align:center"><i class="fa fa-2x fa-facebook"></i></th>
+                <td><h4><a href="https://www.facebook.com/pieterdc97">pieterdc97</a></h4></td>
+              </tr>
+              <tr>
+                <th style="text-align:center"><i class="fa fa-2x fa-twitter"></i></th>
+                <td><h4><a href="https://twitter.com/thepieterdc">@thepieterdc</a></h4></td>
+              </tr>
+              <tr>
+                <th style="text-align:center"><i class="fa fa-2x fa-github"></i></th>
+                <td><h4><a href="https://github.com/thepieterdc">thepieterdc</a> &mdash; <a href="https://github.ugent.be/piedcler">piedcler (UGent)</a></h4></td>
+              </tr>
+              <tr>
+                <th style="text-align:center"><i class="fa fa-2x fa-stack-overflow"></i></th>
+                <td><h4><a href="http://stackoverflow.com/users/3499277/thepieterdc">thepieterdc</a></h4></td>
+              </tr>
+              <tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
