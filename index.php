@@ -1,6 +1,6 @@
 <?php
 $start = microtime(true);
-$theme = (date("H") < 6 || date("H") >= 23) ? "darkly":"flatly";
+$theme = (date("H") < 6 || date("H") >= 22) ? "darkly":"flatly";
 $iconColor = ($theme == "darkly") ? "#ffffff":"#2c3e50";
 
 function days_till_birthday() {
@@ -112,7 +112,11 @@ function days_till_birthday() {
             <tbody>
               <tr>
                 <th style="text-align:center"><i class="fa fa-2x fa-birthday-cake"></i></th>
-                <td><h4>August 21, 1997 &mdash;	 that's another <?=days_till_birthday()?> days :(</h4></a></td>
+                <td><h4>August 21, 1997 &mdash;	that's another <?=days_till_birthday()?> days :(</h4></a></td>
+              </tr>
+              <tr>
+                <th style="text-align:center"><i class="fa fa-2x fa-university"></i></th>
+                <td><h4>Universiteit Gent &mdash; Bachelor of Science(IT)</h4></td>
               </tr>
               <tr>
                 <th style="text-align:center"><i class="fa fa-2x fa-envelope"></i></th>
@@ -134,7 +138,6 @@ function days_till_birthday() {
                 <th style="text-align:center"><i class="fa fa-2x fa-stack-overflow"></i></th>
                 <td><h4><a href="http://stackoverflow.com/users/3499277/thepieterdc">thepieterdc</a></h4></td>
               </tr>
-              <tr>
             </tbody>
           </table>
         </div>
