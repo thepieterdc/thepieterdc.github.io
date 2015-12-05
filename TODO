@@ -1,5 +1,4 @@
 - Get rid of external cdns
-- Fix certain alignments
 - Metatags!
 - Google pagespeed etc
-- Fancy javascript stuff
+- JavaScript nightmode detection instead of PHP -> users timezone
