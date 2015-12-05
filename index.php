@@ -183,7 +183,7 @@ function days_till_birthday() {
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-  $.getJSON("getquote.php", "", function(r) {
+  $.getJSON("https://crossorigin.me/http://quotes.stormconsultancy.co.uk/random.json", "", function(r) {
     $("#contactLinkQuoteQuote").html(r.quote);
     $("#contactLinkQuoteAuthor").html(r.author);
   });
