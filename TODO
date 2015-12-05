@@ -1,4 +1,2 @@
-- Get rid of external cdns
-- Google pagespeed etc
 - Fancy image captions maybe
 - JavaScript nightmode detection instead of PHP -> users timezone

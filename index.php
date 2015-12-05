@@ -16,7 +16,7 @@ function days_till_birthday() {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height:100%">
 <head>
   <title>Pieter De Clercq</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -27,8 +27,8 @@ function days_till_birthday() {
   <meta name="author" content="Pieter De Clercq" />
   <link rel="author" href="https://plus.google.com/108970652148502129257/posts"/>
 	<link rel="stylesheet" href="assets/css/bootstrap.<?=$theme?>.min.css" />
-  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/fonts/Devicon.min.css" />
+  <link rel="stylesheet" href="assets/fonts/FontAwesome.min.css" />
   <style type="text/css">
   .zeropadding{padding:0}
   .zeromargin{margin:0}
@@ -36,12 +36,12 @@ function days_till_birthday() {
   a{text-decoration:none !important}
   </style>
 </head>
-<body>
-<div class="container">
+<body style="height:100%">
+<div class="container" style="height:100%">
   <div class="row">
-    <div class="col-md-12" style="text-align:center"><h1>Pieter De Clercq</h1></div>
+    <div class="col-md-12" style="text-align:center;"><h1>Pieter De Clercq</h1></div>
   </div>
-    <div class="row">
+    <div class="row" id="mainPage">
       <div class="col-md-7">
         <div class="panel panel-primary">
           <div class="panel-heading">
@@ -95,15 +95,18 @@ function days_till_birthday() {
                 <tr>
                   <th>Spoken</th>
                   <td style="padding-left:0px">
-                    <div class="col-md-3" style="text-align:center"><img src="assets/img/flags/nl.png" /></div>
-                    <div class="col-md-3" style="text-align:center"><img src="assets/img/flags/uk.png" /></div>
-                    <div class="col-md-3" style="text-align:center"><img src="assets/img/flags/fr.png" /></div>
-                    <div class="col-md-3" style="text-align:center"><img src="assets/img/flags/de.png" /></div>
+                    <div class="col-md-3" style="text-align:center"><img src="assets/img/flags/nl.png" style="width:48px;height:48px" /></div>
+                    <div class="col-md-3" style="text-align:center"><img src="assets/img/flags/uk.png" style="width:48px;height:48px"/></div>
+                    <div class="col-md-3" style="text-align:center"><img src="assets/img/flags/fr.png" style="width:48px;height:48px"/></div>
+                    <div class="col-md-3" style="text-align:center"><img src="assets/img/flags/de.png" style="width:48px;height:48px"/></div>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
+        </div>
+        <div class="panel">
+          <small>Copyright &copy; <?=date("Y")?> Pieter De Clercq &mdash; icons are property of <a href="http://devicon.fr/">devicon.fr</a></small>
         </div>
       </div>
       <div class="col-md-5">
@@ -136,23 +139,23 @@ function days_till_birthday() {
                 </tr>
                 <tr>
                   <th style="text-align:center;vertical-align:middle"><i class="fa fa-2x fa-envelope"></i></th>
-                  <td><h4><a href="mailto:pieterdeclercq@outlook.com">pieterdeclercq@outlook.com</a></h4></td>
+                  <td><h4><a href="#" data-link="mailto:pieterdeclercq@outlook.com" class="contactLink">pieterdeclercq@outlook.com</a></h4></td>
                 </tr>
                 <tr>
                   <th style="text-align:center;vertical-align:middle"><i class="fa fa-2x fa-facebook"></i></th>
-                  <td><h4><a href="https://www.facebook.com/pieterdc97">pieterdc97</a></h4></td>
+                  <td><h4><a href="#" data-link="https://www.facebook.com/pieterdc97" class="contactLink">pieterdc97</a></h4></td>
                 </tr>
                 <tr>
                   <th style="text-align:center;vertical-align:middle"><i class="fa fa-2x fa-twitter"></i></th>
-                  <td><h4><a href="https://twitter.com/thepieterdc">@thepieterdc</a></h4></td>
+                  <td><h4><a href="#" data-link="https://twitter.com/thepieterdc" class="contactLink">@thepieterdc</a></h4></td>
                 </tr>
                 <tr>
                   <th style="text-align:center;vertical-align:middle"><i class="fa fa-2x fa-github"></i></th>
-                  <td><h4><a href="https://github.com/thepieterdc">thepieterdc</a> &mdash; <a href="https://github.ugent.be/piedcler">piedcler (UGent)</a></h4></td>
+                  <td><h4><a href="#" data-link="https://github.com/thepieterdc" class="contactLink">thepieterdc</a> &mdash; <a href="#" data-link="https://github.ugent.be/piedcler" class="contactLink">piedcler (UGent)</a></h4></td>
                 </tr>
                 <tr>
                   <th style="text-align:center;vertical-align:middle"><i class="fa fa-2x fa-stack-overflow"></i></th>
-                  <td><h4><a href="http://stackoverflow.com/users/3499277/thepieterdc">thepieterdc</a></h4></td>
+                  <td><h4><a href="#" data-link="http://stackoverflow.com/users/3499277/thepieterdc" class="contactLink">thepieterdc</a></h4></td>
                 </tr>
               </tbody>
             </table>
@@ -160,11 +163,72 @@ function days_till_birthday() {
         </div>
       </div>
     </div>
+    <div class="row" id="contactLinkPage" style="display:none">
+      <div id="contactLinkQuote" style="display:none">
+        <blockquote class="blockquote-reverse">
+          <p id="contactLinkQuoteQuote"></p>
+          <footer id="contactLinkQuoteAuthor"></footer>
+        </blockquote>
+      </div>
+      <div id="contactLinkIconDiv" style="text-align:right">
+        <i class="fa" id="contactLinkIcon" style="font-size:10em"></i>
+      </div>
+      <div id="contactLinkTextDiv">
+        <h1>See you soon!</h1>
+        You will be redirected to your destination in <span id="contactLinkSecondsToRedirect">6</span> seconds.
+      </div>
+    </div>
 </div>
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+  $.getJSON("http://localhost/ugent/getquote.php", "", function(r) {
+    $("#contactLinkQuoteQuote").html(r.quote);
+    $("#contactLinkQuoteAuthor").html(r.author);
+  });
+
+  $(".contactLink").click(function() {
+    var $this = $(this);
+    var link = $this.attr('data-link');
+    var icon;
+    var iconClasses = $this.parents("tr").find("th").find("i").attr('class').split(' ');
+    $.each(iconClasses, function(i,e) {
+      if(e != "fa" && e != "fa-2x") {
+        icon = e;
+      }
+    });
+
+    $("#contactLinkIcon").addClass(icon);
+
+    if($("#contactLinkQuoteQuote").html() != "") {
+      $("#contactLinkQuote").addClass("col-md-6").show();
+      $("#contactLinkIconDiv").addClass("col-md-2");
+      $("#contactLinkTextDiv").addClass("col-md-4");
+    } else {
+      $("#contactLinkIconDiv").addClass("col-md-7");
+      $("#contactLinkTextDiv").addClass("col-md-5");
+    }
+
+    var pageHeight = $(window).height();
+    var divHeight = $("#contactLinkPage").height();
+
+    $("#contactLinkPage").css('margin-top',parseInt(((pageHeight-divHeight)/5)/pageHeight*100)+"%");
+
+    $("#mainPage").fadeOut(500);
+    $("#mainPage").promise().done(function() {
+      $("#contactLinkPage").fadeIn(1500);
+      window.setInterval(function() {
+        var timeLeft = parseInt($("#contactLinkSecondsToRedirect").html());
+        if(timeLeft == 0){
+          window.location = link;
+        }else{
+          $("#contactLinkSecondsToRedirect").html(timeLeft-1);
+        }
+      }, 1000);
+    });
+  });
+
   $(".iconColor").hover(function() {
     var $this = $(this);
     if(!$this.hasClass('noAnimate')) {
