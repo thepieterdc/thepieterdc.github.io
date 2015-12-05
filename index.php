@@ -183,7 +183,7 @@ function days_till_birthday() {
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-  $.getJSON("http://localhost/ugent/getquote.php", "", function(r) {
+  $.getJSON("getquote.php", "", function(r) {
     $("#contactLinkQuoteQuote").html(r.quote);
     $("#contactLinkQuoteAuthor").html(r.author);
   });
