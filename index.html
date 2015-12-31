@@ -1,20 +1,3 @@
-<?php
-$theme = (date("H") < 6 || date("H") >= 22) ? "darkly":"flatly";
-$iconColor = ($theme == "darkly") ? "#ffffff":"#2c3e50";
-
-function days_till_birthday() {
-  $birthdayThisYear = new DateTime(date('Y') . '-' . '08-21' .' 00:00:00');
-  $today = new DateTime('midnight today');
-
-  if ($birthdayThisYear < $today) {
-      $birthdayThisYear->modify("+1 Year");
-  }
-
-  $diff = $birthdayThisYear->diff($today);
-
-  return $diff->days;
-}
-?>
 <!DOCTYPE html>
 <html lang="en" style="height:100%">
 <head>
@@ -26,18 +9,30 @@ function days_till_birthday() {
   <meta name="description" content="Pieter De Clercq - Universiteit Gent" />
   <meta name="author" content="Pieter De Clercq" />
   <link rel="author" href="https://plus.google.com/108970652148502129257/posts"/>
-	<link rel="stylesheet" href="assets/css/bootstrap.<?=$theme?>.min.css" />
+	<link rel="stylesheet" id="stylesheet" />
   <link rel="stylesheet" href="assets/fonts/Devicon.min.css" />
   <link rel="stylesheet" href="assets/fonts/FontAwesome.min.css" />
   <style type="text/css">
-  .zeropadding{padding:0}
-  .zeromargin{margin:0}
-  .iconColor{color:<?=$iconColor?>;cursor:pointer;margin-top:10px}
+  .zeropadding{padding:0 !important}
+  .zeromargin{margin:0 !important}
   a{text-decoration:none !important}
+  #fountainG{position:absolute;width:570px;height:69px;margin:auto;top:40%;left:30%}.fountainG{position:absolute;top:0;background-color:#000;width:69px;height:69px;animation-name:bounce_fountainG;-o-animation-name:bounce_fountainG;-ms-animation-name:bounce_fountainG;-webkit-animation-name:bounce_fountainG;-moz-animation-name:bounce_fountainG;animation-duration:.845s;-o-animation-duration:.845s;-ms-animation-duration:.845s;-webkit-animation-duration:.845s;-moz-animation-duration:.845s;animation-iteration-count:infinite;-o-animation-iteration-count:infinite;-ms-animation-iteration-count:infinite;-webkit-animation-iteration-count:infinite;-moz-animation-iteration-count:infinite;animation-direction:normal;-o-animation-direction:normal;-ms-animation-direction:normal;-webkit-animation-direction:normal;-moz-animation-direction:normal;transform:scale(.3);-o-transform:scale(.3);-ms-transform:scale(.3);-webkit-transform:scale(.3);-moz-transform:scale(.3);border-radius:45px;-o-border-radius:45px;-ms-border-radius:45px;-webkit-border-radius:45px;-moz-border-radius:45px}#fountainG_1{left:0;animation-delay:.336s;-o-animation-delay:.336s;-ms-animation-delay:.336s;-webkit-animation-delay:.336s;-moz-animation-delay:.336s}#fountainG_2{left:71px;animation-delay:.4225s;-o-animation-delay:.4225s;-ms-animation-delay:.4225s;-webkit-animation-delay:.4225s;-moz-animation-delay:.4225s}#fountainG_3{left:143px;animation-delay:.509s;-o-animation-delay:.509s;-ms-animation-delay:.509s;-webkit-animation-delay:.509s;-moz-animation-delay:.509s}#fountainG_4{left:214px;animation-delay:.5955s;-o-animation-delay:.5955s;-ms-animation-delay:.5955s;-webkit-animation-delay:.5955s;-moz-animation-delay:.5955s}#fountainG_5{left:285px;animation-delay:.672s;-o-animation-delay:.672s;-ms-animation-delay:.672s;-webkit-animation-delay:.672s;-moz-animation-delay:.672s}#fountainG_6{left:356px;animation-delay:.7585s;-o-animation-delay:.7585s;-ms-animation-delay:.7585s;-webkit-animation-delay:.7585s;-moz-animation-delay:.7585s}#fountainG_7{left:428px;animation-delay:.845s;-o-animation-delay:.845s;-ms-animation-delay:.845s;-webkit-animation-delay:.845s;-moz-animation-delay:.845s}#fountainG_8{left:499px;animation-delay:.9315s;-o-animation-delay:.9315s;-ms-animation-delay:.9315s;-webkit-animation-delay:.9315s;-moz-animation-delay:.9315s}@keyframes bounce_fountainG{0{transform:scale(1);background-color:#000}100%{transform:scale(.3);background-color:rgba(255,255,255,0.39)}}@-o-keyframes bounce_fountainG{0{-o-transform:scale(1);background-color:#000}100%{-o-transform:scale(.3);background-color:rgba(255,255,255,0.39)}}@-ms-keyframes bounce_fountainG{0{-ms-transform:scale(1);background-color:#000}100%{-ms-transform:scale(.3);background-color:rgba(255,255,255,0.39)}}@-webkit-keyframes bounce_fountainG{0{-webkit-transform:scale(1);background-color:#000}100%{-webkit-transform:scale(.3);background-color:rgba(255,255,255,0.39)}}@-moz-keyframes bounce_fountainG{0{-moz-transform:scale(1);background-color:#000}100%{-moz-transform:scale(.3);background-color:rgba(255,255,255,0.39)}}
   </style>
 </head>
 <body style="height:100%">
-<div class="container" style="height:100%">
+<div class="container" style="height:100%" id="loadingContainer">
+  <div id="fountainG">
+  	<div id="fountainG_1" class="fountainG"></div>
+  	<div id="fountainG_2" class="fountainG"></div>
+  	<div id="fountainG_3" class="fountainG"></div>
+  	<div id="fountainG_4" class="fountainG"></div>
+  	<div id="fountainG_5" class="fountainG"></div>
+  	<div id="fountainG_6" class="fountainG"></div>
+  	<div id="fountainG_7" class="fountainG"></div>
+  	<div id="fountainG_8" class="fountainG"></div>
+  </div>
+</div>
+<div class="container" style="height:100%;display:none" id="pageContainer">
   <div class="row">
     <div class="col-md-12" style="text-align:center;"><h1>Pieter De Clercq</h1></div>
   </div>
@@ -106,7 +101,7 @@ function days_till_birthday() {
           </div>
         </div>
         <div class="panel">
-          <small>Copyright &copy; <?=date("Y")?> Pieter De Clercq &mdash; icons are property of <a href="http://devicon.fr/">devicon.fr</a></small>
+          <small>Copyright &copy; <span id="nowYear"></span> Pieter De Clercq &mdash; icons are property of <a href="http://devicon.fr/">devicon.fr</a></small>
         </div>
       </div>
       <div class="col-md-5">
@@ -119,19 +114,7 @@ function days_till_birthday() {
               <tbody>
                 <tr>
                   <th style="text-align:center;vertical-align:middle"><i class="fa fa-2x fa-birthday-cake"></i></th>
-                  <td><h4>August 21, 1997 &mdash;
-                    <?php
-                    $days_till_birthday = days_till_birthday();
-                    if($days_till_birthday == 0) {
-                      echo "yay!";
-                    } elseif($days_till_birthday < 5) {
-                      echo "time to buy presents!";
-                    } elseif($days_till_birthday > 360) {
-                      echo "a few days ago";
-                    } else {
-                      echo "that's another ".$days_till_birthday." days :(";
-                    }
-                    ?></h4></a></td>
+                  <td><h4>August 21, 1997 &mdash; <span id="birthdayText"></span></h4></a></td>
                 </tr>
                 <tr>
                   <th style="text-align:center;vertical-align:middle"><i class="fa fa-2x fa-university"></i></th>
@@ -183,6 +166,33 @@ function days_till_birthday() {
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+  window.now = new Date();
+
+  var theme = "flatly";
+  if(window.now.getHours() < 6 || window.now.getHours() >= 22) {
+    theme = "darkly";
+  }
+
+  $("head").append('<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.'+theme+'.min.css">');
+
+  $("#nowYear").html(window.now.getFullYear());
+
+  var daysTillBday = daysTillBirthday();
+  if(daysTillBday == 0) {
+    $("#birthdayText").html("yay!");
+  } else if(daysTillBday < 5) {
+    $("#birthdayText").html("time to buy presents!");
+  } else if(daysTillBday > 360) {
+    $("#birthdayText").html("a few days ago");
+  } else {
+    $("#birthdayText").html("that's another "+daysTillBday+" days :(");
+  }
+
+  $("#loadingContainer").fadeOut(500);
+  $("#loadingContainer").promise().done(function() {
+    $("#pageContainer").fadeIn(500);
+  });
+
   $.getJSON("https://crossorigin.me/http://quotes.stormconsultancy.co.uk/random.json", "", function(r) {
     $("#contactLinkQuoteQuote").html(r.quote);
     $("#contactLinkQuoteAuthor").html(r.author);
@@ -250,6 +260,8 @@ $(document).ready(function() {
     });
   });
 });
+
+function daysTillBirthday(){var a=new Date(window.now.getFullYear(),7,21);if(window.now.getTime()>a.getTime()){a.setFullYear(a.getFullYear()+1)}var b=a.getTime()-window.now.getTime();return Math.floor(b/(1000*60*60*24))};
 </script>
 </body>
 </html>
