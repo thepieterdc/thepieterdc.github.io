@@ -1,2 +1,2 @@
-# ugent-homepage
-My homepage at UGent - http://users.ugent.be/~piedcler/
+# thepieterdc.github.io
+My GitHub website - http://thepieterdc.github.io
