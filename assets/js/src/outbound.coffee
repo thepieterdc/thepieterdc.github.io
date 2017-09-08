@@ -1,5 +1,5 @@
 $ ->
-  $.getJSON 'http://quotes.stormconsultancy.co.uk/random.json', '', (r) ->
+  $.getJSON 'https://crossorigin.me/http://quotes.stormconsultancy.co.uk/random.json', '', (r) ->
     $("#outbound-quote-text").html r.quote
     $("#outbound-quote-author").html r.author
 
