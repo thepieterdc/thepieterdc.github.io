@@ -1,0 +1,43 @@
+$iconsmap: (
+        android: "\e60d",
+        apache: "\e628",
+        atom: "\e623",
+        bitbucket: "\e910",
+        bootstrap: "\e62e",
+        bower: "\e64e",
+        chrome: "\e665",
+        coffeescript: "\e669",
+        css3: "\e678",
+        debian: "\e67e",
+        firefox: "\e75d",
+        git: "\e7a7",
+        github: "\e90a",
+        gradle: "\e8f1",
+        html5: "\e7f6",
+        inkscape: "\e834",
+        intellij: "\e932",
+        java: "\e841",
+        jquery: "\e849",
+        mongodb: "\eb43",
+        mysql: "\eb60",
+        nodejs: "\eb69",
+        nodewebkit: "\e613",
+        phpstorm: "\e912",
+        postgresql: "\eb7c",
+        pycharm: "\e934",
+        python: "\eb88",
+        rails: "\eba2",
+        ruby: "\ebc9",
+        sourcetree: "\e914",
+        ssh: "\e916",
+        travis: "\ebcc",
+        ubuntu: "\ebd0",
+        visualstudio: "\e926",
+        webstorm: "\e938"
+);
+
+@each $name, $value in $iconsmap {
+  .devicon-#{$name}-plain:hover::before {
+    content: $value;
+  }
+}

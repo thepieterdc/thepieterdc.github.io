@@ -12,7 +12,7 @@ const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
 
 /* CSS */
-const cssCommon = ['assets/bower/font-awesome/css/font-awesome.min.css', 'assets/bower/devicon/css/devicon.min.css', 'assets/bower/devicon/devicon-colors.css', 'assets/css/src/*.sass'];
+const cssCommon = ['assets/bower/font-awesome/css/font-awesome.min.css', 'assets/bower/devicon/css/devicon.min.css', 'assets/bower/devicon/devicon-colors.css', 'assets/css/src/*.sass', 'assets/css/src/*.scss'];
 const cssDaily = ['assets/bower/bootswatch/flatly/bootstrap.min.css'];
 const cssNightly = ['assets/bower/bootswatch/darkly/bootstrap.min.css'];
 const cssOut = 'assets/css';
