@@ -1,0 +1,19 @@
+{
+  "name": "thepieterdc.github.io",
+  "version": "2.0.0",
+  "description": "GitHub page for thepieterdc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thepieterdc/thepieterdc.github.io.git"
+  },
+  "author": "Pieter De Clercq",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thepieterdc/thepieterdc.github.io/issues"
+  },
+  "homepage": "https://thepieterdc.github.io"
+}
