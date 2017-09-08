@@ -12,22 +12,33 @@ const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
 
 /* CSS */
-const cssCommon = ['assets/bower/font-awesome/css/font-awesome.min.css', 'assets/bower/devicon/css/devicon.min.css', 'assets/css/src/*.sass'];
+const cssCommon = ['assets/bower/font-awesome/css/font-awesome.min.css', 'assets/bower/devicon/css/devicon.min.css', 'assets/bower/devicon/devicon-colors.css', 'assets/css/src/*.sass'];
 const cssDaily = ['assets/bower/bootswatch/flatly/bootstrap.min.css'];
 const cssNightly = ['assets/bower/bootswatch/darkly/bootstrap.min.css'];
 const cssOut = 'assets/css';
 
 /* JS */
+const jsIn = ['assets/bower/jquery/dist/jquery.min.js'];
+const jsOut = 'assets/js';
 
 /* COFFEE */
-
-/* FAVICON */
+const coffeeIn = ['assets/js/src/*.coffee'];
+const coffeeOut = 'assets/js';
 
 /* FONTS */
 const fontsIn = ['assets/bower/font-awesome/fonts/*', 'assets/bower/devicon/fonts/*'];
 const fontsOut = 'assets/fonts';
 
 /* TASKS */
+gulp.task('coffee', function () {
+    return gulp.src(coffeeIn)
+        .pipe(coffee())
+        .pipe(babel({presets: ['env']}))
+        .pipe(concat('combined.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(coffeeOut));
+});
+
 gulp.task('css-common', function () {
     return gulp.src(cssCommon)
         .pipe(sass({
@@ -128,5 +139,13 @@ gulp.task('fonts', function () {
         .pipe(copy(fontsOut, {prefix: 100}))
 });
 
-gulp.task('default', ['css', 'favicon', 'fonts'], function () {
+gulp.task('js', function () {
+    return gulp.src(jsIn)
+        .pipe(babel({presets: ['env']}))
+        .pipe(concat('vendor.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(jsOut));
+});
+
+gulp.task('default', ['coffee', 'css', 'favicon', 'fonts', 'js'], function () {
 });
