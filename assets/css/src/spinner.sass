@@ -1,5 +1,3 @@
-@import "mixins"
-
 #fountainG
   position: absolute
   width: 570px
@@ -14,23 +12,23 @@
   background-color: #000
   width: 69px
   height: 69px
-  @include vendor-prefix('animation-name', 'bounce_fountainG')
-  @include vendor-prefix('animation-duration', .845s)
-  @include vendor-prefix('animation-iteration-count', infinite)
-  @include vendor-prefix('animation-direction', normal)
-  @include vendor-prefix('transform', scale(0.3))
-  @include vendor-prefix('border-radius', 45px)
+  animation-name: 'bounce_fountainG'
+  animation-duration: .845s
+  animation-iteration-count: infinite
+  animation-direction: normal
+  transform: scale(0.3)
+  border-radius: 45px
 
 @for $i from 1 through 8
   #fountainG_#{$i}
     left: unquote(71 * ($i - 1) + 'px')
-    @include vendor-prefix('animation-delay', .336 + ($i * .0865) + 's')
+    animation-delay: .336 + ($i * .0865) + 's'
 
-@each $vendor in ('@-webkit-', '@-moz-', '@-ms-', '@-o-', '@')
-  #{$vendor}keyframes
-    0%
-      #{$vendor}transform: scale(1)
-      background-color: #000
-    100%
-      #{$vendor}transform: scale(.3)
-      background-color: rgba(255, 255, 255, .39)
+@keyframes bounce_fountainG
+  0%
+    transform: scale(1)
+    background-color: #000
+
+  100%
+    transform: scale(.3)
+    background-color: rgba(255, 255, 255, .39)
