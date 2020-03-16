@@ -39,6 +39,7 @@
   "devDependencies": {
     "fs": "^0.0.2",
     "gulp-real-favicon": "^0.3.2",
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.5",
+    "set-value": "^3.0.1"
   }
 }
