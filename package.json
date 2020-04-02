@@ -19,8 +19,8 @@
   "private": true,
   "homepage": "https://thepieterdc.github.io",
   "dependencies": {
-    "@babel/core": "^7.8.7",
-    "@babel/preset-env": "^7.8.7",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
     "bootswatch": "^4.4.1",
     "devicon": "^2.2.0",
     "font-awesome": "^4.7.0",
@@ -39,7 +39,8 @@
   "devDependencies": {
     "fs": "^0.0.2",
     "gulp-real-favicon": "^0.3.2",
+    "kind-of": "^6.0.3",
     "minimist": "^1.2.5",
-    "set-value": "^3.0.1"
+    "set-value": "^3.0.2"
   }
 }
